@@ -9,6 +9,9 @@ class Category:
 
         Category.count_of_category += 1
 
+    def __repr__(self):
+        return f"Category: ('{self.name}', {self.description}, '{self.goods}', 'Количество категорий={self.count_of_category}')"
+
 
 class Product:
     """Класс продукт"""
@@ -21,3 +24,6 @@ class Product:
         self.count_in_stock = count_in_stock
 
         Product.count_of_products += 1
+
+    def __repr__(self):
+        return f"Product: ('{self.name}', {self.description}, '{self.price}', 'Количество продуктов={self.count_of_products}')"
