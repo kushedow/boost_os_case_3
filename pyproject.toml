@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "sky-hw-13-1"
+version = "0.1.0"
+description = ""
+authors = ["Aleksandr Sundeev <navigator97@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
