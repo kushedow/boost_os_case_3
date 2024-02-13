@@ -2,7 +2,7 @@ class Category:
     """Класс категории"""
     count_of_category = 0
 
-    def __init__(self, name: str, description: str, goods: list):
+    def __init__(self, name: str, description: str, goods):
         self.name = name
         self.description = description
         self.goods = goods
