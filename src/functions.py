@@ -13,10 +13,16 @@ def load_data(file_name):
     return data
 
 
-def get_category(data):
+def get_category_and_product(data):
     categories = []
+    products = []
     for category in data:
         categories.append(Category(category["name"], category["description"], category["products"]))
+        for el in category["products"]:
+            # print('el-', el["price"])
+            products.append(Product(el["name"], el["description"], el["price"], el["quantity"]))
+            print('all prod', products)
+        print('all cat', categories)
     return categories
 
 
