@@ -14,7 +14,6 @@ def load_data(file_name):
 
 
 def get_category_and_product(data):
-    print(data)
     categories = []
     products = []
     for category in data:
