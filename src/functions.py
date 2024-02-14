@@ -1,5 +1,6 @@
-import json, os
-from classes import Category, Product
+import json
+import os
+from src.classes import Category, Product
 
 
 def load_data(file_name):
