@@ -17,9 +17,13 @@ def load_data(file_name):
 def get_category_and_product(data):
     categories = []
     products = []
+    i = 0
     for category in data:
         categories.append(Category(category["name"], category["description"], category["products"]))
         for el in category["products"]:
             products.append(Product(el["name"], el["description"], el["price"], el["quantity"]))
             Category.unique_goods += 1
+        categories[i].add_list_goods()
+        i += 1
+    categories[0].print_goods()
     return categories, products
