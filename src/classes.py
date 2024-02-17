@@ -1,3 +1,6 @@
+# from src.functions import get_category_and_product
+
+
 class Category:
     """Класс категории"""
     count_of_category = 0
@@ -44,11 +47,22 @@ class Product:
         Product.count_of_products += 1
 
     @classmethod
-    def new_goods(cls, goods):
+    def new_goods(cls, goods, all_goods):
         """
-        создание товара
+        создание и добавление товара
         """
-        cls.new_good = goods
+        cls.new_good = all_goods.append(goods)
+
+    @classmethod
+    def add_new_goods(cls, goods):
+        """
+        е товара
+        """
+        pass
+
+        # cls.new_good = goods
+        # print(cls.new_good)
+        # products.append(Product(["name"]: 'jkl', ["description"]: 'kkk', ["price"]: 100, ["quantity"]: '1')
 
     @property
     def prices(self):
