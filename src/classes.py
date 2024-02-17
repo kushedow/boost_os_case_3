@@ -49,20 +49,9 @@ class Product:
     @classmethod
     def new_goods(cls, goods, all_goods):
         """
-        создание и добавление товара
+        создание товара
         """
         cls.new_good = all_goods.append(goods)
-
-    @classmethod
-    def add_new_goods(cls, goods):
-        """
-        е товара
-        """
-        pass
-
-        # cls.new_good = goods
-        # print(cls.new_good)
-        # products.append(Product(["name"]: 'jkl', ["description"]: 'kkk', ["price"]: 100, ["quantity"]: '1')
 
     @property
     def prices(self):
