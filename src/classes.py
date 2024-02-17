@@ -38,7 +38,7 @@ class Product:
     def __init__(self, name: str, description: str, price: float, quantity: int):
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
 
         Product.count_of_products += 1
@@ -50,5 +50,24 @@ class Product:
         """
         cls.new_good = goods
 
+    @property
+    def prices(self):
+        return self.__price
+
+    @prices.setter
+    def prices(self, new_price):
+        if new_price == self.__price or new_price <= 0:
+            print('Цена введена некорректная!')
+        elif new_price < self.__price:
+            choice = input('Введенная цена ниже установленой!\nСогласны понизить цену? (Y/N): ')
+            if choice.upper() == 'Y':
+                self.__price = new_price
+        else:
+            self.__price = new_price
+
+    @prices.deleter
+    def prices(self):
+        self.__price = None
+
     def __repr__(self):
-        return f"Product: ('{self.name}', {self.description}, '{self.price}', 'Количество продуктов в наличии={self.quantity}')"
+        return f"Product: ('{self.name}', {self.description}, '{self.__price}', 'Количество продуктов в наличии={self.quantity}')"

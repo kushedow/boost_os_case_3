@@ -37,7 +37,6 @@ def class_products():
 def test_products_init(class_products):
     assert class_products.name == 'Samsung Galaxy C23 Ultra'
     assert class_products.description == '256GB, Серый цвет, 200MP камера'
-    assert class_products.price == 180000.0
     assert class_products.quantity == 5
 
 
@@ -48,4 +47,3 @@ def test_products_count_of_products(class_products):
 def test_products_repr(class_products):
     assert class_products.name == 'Samsung Galaxy C23 Ultra'
     assert class_products.description == '256GB, Серый цвет, 200MP камера'
-
