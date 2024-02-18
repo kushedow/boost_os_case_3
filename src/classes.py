@@ -48,17 +48,12 @@ class Product:
         return self.new_good
 
     @classmethod
-    def new_goods(cls, goods, all_goods):
+    def new_goods(cls, name: str, description: str, price: float, quantity: int):
         """
-        создание и добавление товара (но это без проверки наличия такого же товара, схожего по имени)
+        создание товара
         """
-        cls.new_good = all_goods
-        cls.new_good.append(Product(goods["name"], goods["description"], goods["price"], goods["quantity"]))
-
-#   или этот вариант:
-    @classmethod
-    def product_goods(cls, all_goods):
-        return cls(**all_goods)
+        new_good = cls(name, description, price, quantity)
+        return new_good
 
     @property
     def prices(self):
@@ -80,4 +75,9 @@ class Product:
         self.__price = None
 
     def __repr__(self):
-        return f"Product: ('{self.name}', {self.description}, '{self.__price}', 'Количество продуктов в наличии={self.quantity}')"
+        return f"Product: ('{self.name}', '{self.description}', '{self.__price}', 'Количество продуктов в наличии={self.quantity}')"
+
+
+new_product = Product.new_goods("Samsung Galaxy C23 Ultra", "мычит", 1000.0, 1)
+print('Новый продукт:', new_product)
+

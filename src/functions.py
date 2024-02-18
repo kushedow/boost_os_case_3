@@ -26,10 +26,4 @@ def get_category_and_product(data):
         categories[i].add_list_goods()
         i += 1
     categories[0].print_goods()
-    products[0].new_goods({
-            "name": "Samsung Galaxy C23 Ultra",
-            "description": "мычит",
-            "price": 1000.0,
-            "quantity": 1
-        }, products)
     return categories, products
