@@ -55,6 +55,11 @@ class Product:
         cls.new_good = all_goods
         cls.new_good.append(Product(goods["name"], goods["description"], goods["price"], goods["quantity"]))
 
+#   или этот вариант:
+    @classmethod
+    def product_goods(cls, all_goods):
+        return cls(**all_goods)
+
     @property
     def prices(self):
         return self.__price
