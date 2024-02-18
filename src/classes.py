@@ -1,6 +1,3 @@
-# from src.functions import get_category_and_product
-
-
 class Category:
     """Класс категории"""
     count_of_category = 0
@@ -46,12 +43,17 @@ class Product:
 
         Product.count_of_products += 1
 
+    @property
+    def list_goods(self):
+        return self.new_good
+
     @classmethod
     def new_goods(cls, goods, all_goods):
         """
-        создание товара
+        создание и добавление товара (но это без проверки наличия такого же товара, схожего по имени)
         """
-        cls.new_good = all_goods.append(goods)
+        cls.new_good = all_goods
+        cls.new_good.append(Product(goods["name"], goods["description"], goods["price"], goods["quantity"]))
 
     @property
     def prices(self):
