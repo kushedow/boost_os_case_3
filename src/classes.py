@@ -27,6 +27,9 @@ class Category:
                     f'{self.list_goods[i][j]['name']}, {int(self.list_goods[i][j]['price'])} руб. Остаток: {self.list_goods[i][j]['quantity']} шт.')
 
     def __len__(self):
+        """
+        Определение количества на складе
+        """
         return len(self.__goods)
 
     def __str__(self):
@@ -63,6 +66,9 @@ class Product:
 
     @prices.setter
     def prices(self, new_price):
+        """
+        Установка новой цены
+        """
         if new_price == self.__price or new_price <= 0:
             print('Цена введена некорректная!')
         elif new_price < self.__price:
@@ -77,6 +83,9 @@ class Product:
         self.__price = None
 
     def __add__(self, other):
+        """
+        Сложение объектов между собой
+        """
         return self.__price * self.quantity + other.__price * other.quantity
 
     def __str__(self):

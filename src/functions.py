@@ -15,11 +15,17 @@ def load_data(file_name):
 
 
 def print_products(data):
+    """
+    Для класса Product строковое отображение
+    """
     for i in range(0, len(data)):
         print(data[i])
 
 
 def print_categories(data):
+    """
+    Для класса Category строковое отображение
+    """
     for i in range(0, len(data)):
         print(data[i])
 
@@ -35,6 +41,9 @@ def count_result(data):
 
 
 def get_category_and_product(data):
+    """
+    Создание объектов крассов: Категория и Продукт
+    """
     categories = []
     products = []
     i = 0
@@ -52,4 +61,3 @@ def get_category_and_product(data):
     print()
     count_result(products)
     return [categories, products]
-
