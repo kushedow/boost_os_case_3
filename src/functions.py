@@ -24,6 +24,16 @@ def print_categories(data):
         print(data[i])
 
 
+def count_result(data):
+    """
+    Подсчет суммы за все имеющиеся товары
+    """
+    result = 0
+    for i in range(0, len(data)-1, 2):
+        result += data[i] + data[i+1]
+    print(f'Сумма за общее количество товара: {int(result)} руб.')
+
+
 def get_category_and_product(data):
     categories = []
     products = []
@@ -37,6 +47,9 @@ def get_category_and_product(data):
         i += 1
     # categories[0].print_goods()
     print_products(products)
+    print()
     print_categories(categories)
+    print()
+    count_result(products)
     return [categories, products]
 

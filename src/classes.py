@@ -76,6 +76,9 @@ class Product:
     def prices(self):
         self.__price = None
 
+    def __add__(self, other):
+        return self.__price * self.quantity + other.__price * other.quantity
+
     def __str__(self):
         return f'{self.name}, {int(self.__price)} руб. Остаток: {self.quantity} шт.'
 
