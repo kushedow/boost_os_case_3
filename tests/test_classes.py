@@ -47,3 +47,16 @@ def test_products_count_of_products(class_products):
 def test_products_repr(class_products):
     assert class_products.name == 'Samsung Galaxy C23 Ultra'
     assert class_products.description == '256GB, Серый цвет, 200MP камера'
+
+
+def test_category_str(class_products):
+    assert class_products.name == 'Samsung Galaxy C23 Ultra'
+    assert class_products.prices == 180000.0
+
+
+def test_print_products(class_products):
+    assert class_products.name == 'Samsung Galaxy C23 Ultra'
+
+
+def test_print_categories(class_category):
+    assert class_category.name == 'Смартфоны'

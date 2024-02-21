@@ -26,6 +26,12 @@ class Category:
                 print(
                     f'{self.list_goods[i][j]['name']}, {int(self.list_goods[i][j]['price'])} руб. Остаток: {self.list_goods[i][j]['quantity']} шт.')
 
+    def __len__(self):
+        return len(self.__goods)
+
+    def __str__(self):
+        return f'{self.name}, количество продуктов: {len(self.__goods)} шт.'
+
     def __repr__(self):
         return f"Category: ('{self.name}', {self.description}, '{self.__goods}', 'общее количество категорий={self.count_of_category} количество уникальных продуктов={self.unique_goods}')"
 
@@ -42,10 +48,6 @@ class Product:
         self.quantity = quantity
 
         Product.count_of_products += 1
-
-    @property
-    def list_goods(self):
-        return self.new_good
 
     @classmethod
     def new_goods(cls, name: str, description: str, price: float, quantity: int):
@@ -74,10 +76,11 @@ class Product:
     def prices(self):
         self.__price = None
 
+    def __str__(self):
+        return f'{self.name}, {int(self.__price)} руб. Остаток: {self.quantity} шт.'
+
     def __repr__(self):
         return f"Product: ('{self.name}', '{self.description}', '{self.__price}', 'Количество продуктов в наличии={self.quantity}')"
 
-
-new_product = Product.new_goods("Samsung Galaxy C23 Ultra", "мычит", 1000.0, 1)
-print('Новый продукт:', new_product)
-
+# new_product = Product.new_goods("Samsung Galaxy C23 Ultra", "мычит", 1000.0, 1)
+# print('Новый продукт:', new_product)

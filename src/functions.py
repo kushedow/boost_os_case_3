@@ -14,6 +14,16 @@ def load_data(file_name):
     return data
 
 
+def print_products(data):
+    for i in range(0, len(data)):
+        print(data[i])
+
+
+def print_categories(data):
+    for i in range(0, len(data)):
+        print(data[i])
+
+
 def get_category_and_product(data):
     categories = []
     products = []
@@ -25,5 +35,8 @@ def get_category_and_product(data):
             Category.unique_goods += 1
         categories[i].add_list_goods()
         i += 1
-    categories[0].print_goods()
-    return categories, products
+    # categories[0].print_goods()
+    print_products(products)
+    print_categories(categories)
+    return [categories, products]
+
