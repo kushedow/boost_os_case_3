@@ -30,7 +30,7 @@ def print_categories(data):
         print(data[i])
 
 
-def count_result(data):
+def print_count_result(data):
     """
     Подсчет суммы за все имеющиеся товары
     """
@@ -59,5 +59,5 @@ def get_category_and_product(data):
     print()
     print_categories(categories)
     print()
-    count_result(products)
+    print_count_result(products)
     return [categories, products]
