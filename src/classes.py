@@ -17,18 +17,20 @@ class Category:
         """
         return self.list_goods.append(self.__goods)
 
+    @property
     def print_goods(self):
         """
         геттер, который выводит список товаров
         """
+        result = ''
         for i in range(0, len(self.list_goods)):
             for j in range(0, len(self.list_goods[i])):
-                print(
-                    f'{self.list_goods[i][j]['name']}, {int(self.list_goods[i][j]['price'])} руб. Остаток: {self.list_goods[i][j]['quantity']} шт.')
+                result += f'{self.list_goods[i][j]['name']}, {int(self.list_goods[i][j]['price'])} руб. Остаток: {self.list_goods[i][j]['quantity']} шт.\n'
+        return result
 
     def __len__(self):
         """
-        Определение количества на складе
+        Определение количества продуктов на складе
         """
         return len(self.__goods)
 
@@ -94,5 +96,6 @@ class Product:
     def __repr__(self):
         return f"Product: ('{self.name}', '{self.description}', '{self.__price}', 'Количество продуктов в наличии={self.quantity}')"
 
-# new_product = Product.new_goods("Samsung Galaxy C23 Ultra", "мычит", 1000.0, 1)
+
+# new_product = Product.new_goods("Sony", "мычит", 500.0, 1)
 # print('Новый продукт:', new_product)

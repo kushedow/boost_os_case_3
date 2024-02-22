@@ -54,7 +54,7 @@ def get_category_and_product(data):
             Category.unique_goods += 1
         categories[i].add_list_goods()
         i += 1
-    # categories[0].print_goods()
+    # print(categories[0].print_goods)
     print_products(products)
     print()
     print_categories(categories)
