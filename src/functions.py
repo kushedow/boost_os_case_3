@@ -27,7 +27,7 @@ def print_categories(data):
     Для класса Category строковое отображение
     """
     for i in range(0, len(data)):
-        print(data[i])
+        print(f'{data[i]} {len(data[i])} шт.')
 
 
 def print_count_result(data):
