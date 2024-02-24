@@ -49,7 +49,8 @@ class Product:
     def __init__(self, name: str, description: str, price: float, quantity: int):
         self.name = name
         self.description = description
-        self._price = price
+        self.__price = price
+        self.price = self.__price
         self.quantity = quantity
 
         Product.count_of_products += 1
@@ -64,37 +65,37 @@ class Product:
 
     @property
     def prices(self):
-        return self._price
+        return self.__price
 
     @prices.setter
     def prices(self, new_price):
         """
         Установка новой цены
         """
-        if new_price == self._price or new_price <= 0:
+        if new_price == self.__price or new_price <= 0:
             print('Цена введена некорректная!')
-        elif new_price < self._price:
+        elif new_price < self.__price:
             choice = input('Введенная цена ниже установленой!\nСогласны понизить цену? (Y/N): ')
             if choice.upper() == 'Y':
-                self._price = new_price
+                self.__price = new_price
         else:
-            self._price = new_price
+            self.__price = new_price
 
     @prices.deleter
     def prices(self):
-        self._price = None
+        self.__price = None
 
     def __add__(self, other):
         """
         Сложение объектов между собой
         """
-        return self._price * self.quantity + other._price * other.quantity
+        return self.price * self.quantity + other.price * other.quantity
 
     def __str__(self):
-        return f'{self.name}, {int(self._price)} руб. Остаток: {self.quantity} шт.'
+        return f'{self.name}, {int(self.__price)} руб. Остаток: {self.quantity} шт.'
 
     def __repr__(self):
-        return f"Product: ('{self.name}', '{self.description}', '{self._price}', 'Количество продуктов в наличии={self.quantity}')"
+        return f"Product: ('{self.name}', '{self.description}', '{self.__price}', 'Количество продуктов в наличии={self.quantity}')"
 
 
 # new_product = Product.new_goods("Sony", "мычит", 500.0, 1)
