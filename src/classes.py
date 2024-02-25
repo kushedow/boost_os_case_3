@@ -53,7 +53,6 @@ class Product:
         self.name = name
         self.description = description
         self.__price = price
-        self.price = self.__price
         self.quantity = quantity
 
         Product.count_of_products += 1
@@ -93,7 +92,7 @@ class Product:
         """
         Сложение объектов между собой
         """
-        return self.price * self.quantity + other.price * other.quantity
+        return self.prices * self.quantity + other.prices * other.quantity
 
     def __str__(self):
         return f'{self.name}, {int(self.__price)} руб. Остаток: {self.quantity} шт.'
