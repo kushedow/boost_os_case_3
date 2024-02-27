@@ -49,11 +49,12 @@ class Product:
     count_of_products = 0
     new_good = []
 
-    def __init__(self, name: str, description: str, price: float, quantity: int):
+    def __init__(self, name: str, description: str, price: float, quantity: int, color='No'):
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
+        self.color = color
 
         Product.count_of_products += 1
 
@@ -100,6 +101,23 @@ class Product:
     def __repr__(self):
         return (f"Product: ('{self.name}', '{self.description}', '{self.__price}', "
                 f"'Количество продуктов в наличии={self.quantity}')")
+
+
+class SmartPhone(Product):
+
+    def __init__(self, efficiency: float, model: str, memory: float, name: str, description: str, price: float,
+                 quantity: int, color):
+        super(SmartPhone, self).__init__(name, description, price, quantity, color)
+        self.efficiency = efficiency
+        self.model = model
+        self.memory = memory
+
+
+class LawnGrass(Product):
+    def __init__(self, made: str, period: float, name: str, description: str, price: float, quantity: int, color):
+        super(LawnGrass, self).__init__(name, description, price, quantity, color)
+        self.made = made
+        self.period = period
 
 # new_product = Product.new_goods("Sony", "мычит", 500.0, 1)
 # print('Новый продукт:', new_product)
