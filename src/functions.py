@@ -60,4 +60,7 @@ def get_category_and_product(data):
     print_categories(categories)
     print()
     # print_count_result(products)
+    # new_product = Product.new_goods("Sony", "мычит", 500.0, 7)
+    # print('Новый продукт:', new_product)
+    # Product.add_product(products, new_product)
     return [categories, products]

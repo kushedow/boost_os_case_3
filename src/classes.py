@@ -66,6 +66,15 @@ class Product:
         new_good = cls(name, description, price, quantity)
         return new_good
 
+    @staticmethod
+    def add_product(data, new_good):
+        """Добавление в список продуктов новый продукт"""
+        if isinstance(new_good, Product):
+            data.append(new_good)
+            return data
+        else:
+            raise TypeError("Не является объектом Product или его наследником")
+
     @property
     def prices(self):
         return self.__price
@@ -93,9 +102,10 @@ class Product:
         """
         Сложение объектов между собой
         """
-        if isinstance(type(other), type(self.__class__)):
+        if isinstance(other, type(self)):
             return self.prices * self.quantity + other.prices * other.quantity
-        raise TypeError
+        else:
+            raise TypeError
 
     def __str__(self):
         return f'{self.name}, {int(self.__price)} руб. Остаток: {self.quantity} шт.'
@@ -124,5 +134,6 @@ class LawnGrass(Product):
         self.made = made
         self.period = period
 
-# new_product = Product.new_goods("Sony", "мычит", 500.0, 1)
+
+# new_product = Product.new_goods("Sony", "мычит", 500.0, 10)
 # print('Новый продукт:', new_product)
