@@ -45,6 +45,10 @@ def test_add_product(class_products, class_products_add):
     assert class_products_add.name == 'Sony'
 
 
+def test___add__():
+    pass
+
+
 def test_products_init(class_products):
     assert class_products.name == 'Samsung Galaxy C23 Ultra'
     assert class_products.description == '256GB, Серый цвет, 200MP камера'

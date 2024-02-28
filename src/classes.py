@@ -69,7 +69,7 @@ class Product:
     @staticmethod
     def add_product(data, new_good):
         """Добавление в список продуктов нового продукта"""
-        if isinstance(new_good, Product):
+        if isinstance(new_good, Product) or issubclass(new_good.__class__, Product):
             data.append(new_good)
             return data
         else:
