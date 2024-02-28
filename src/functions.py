@@ -30,14 +30,14 @@ def print_categories(data):
         print(f'{data[i]} {len(data[i])} шт.')
 
 
-def print_count_result(data):
-    """
-    Подсчет суммы за все имеющиеся товары
-    """
-    result = 0
-    for i in range(0, len(data)-1, 2):
-        result += data[i] + data[i+1]
-    print(f'Сумма за общее количество товара: {int(result)} руб.')
+# def print_count_result(data):
+#     """
+#     Подсчет суммы за все имеющиеся товары
+#     """
+#     result = 0
+#     for i in range(0, len(data)-1, 2):
+#         result += data[i] + data[i+1]
+#     print(f'Сумма за общее количество товара: {int(result)} руб.')
 
 
 def get_category_and_product(data):
@@ -59,5 +59,8 @@ def get_category_and_product(data):
     print()
     print_categories(categories)
     print()
-    print_count_result(products)
+    # print_count_result(products)
+    # new_product = Product.new_goods("Sony", "мычит", 500.0, 7)
+    # print('Новый продукт:', new_product)
+    # Product.add_product(products, new_product)
     return [categories, products]
