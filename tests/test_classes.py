@@ -1,5 +1,5 @@
 import pytest
-from src.classes import Category, Product
+from src.classes import Category, Product, SmartPhone, LawnGrass
 
 
 @pytest.fixture
@@ -60,3 +60,27 @@ def test_print_products(class_products):
 
 def test_print_categories(class_category):
     assert class_category.name == 'Смартфоны'
+
+
+@pytest.fixture
+def class_smartphone():
+    return SmartPhone(1000.5, 'TYN-5', 512.0, 'Motorolla',
+                      'The best', 5000, 9, 'Silver')
+
+
+def test_smartphone_init(class_smartphone):
+    assert class_smartphone.efficiency == 1000.5
+    assert class_smartphone.model == 'TYN-5'
+    assert class_smartphone.color == 'Silver'
+
+
+@pytest.fixture
+def class_lawngrass():
+    return LawnGrass('China', 6.5, 'Kanadka', 'For you',
+                     500, 3, 'Green')
+
+
+def test_lawngrass_init(class_lawngrass):
+    assert class_lawngrass.made == 'China'
+    assert class_lawngrass.period == 6.5
+    assert class_lawngrass.color == 'Green'
