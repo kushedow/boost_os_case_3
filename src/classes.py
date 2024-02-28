@@ -93,7 +93,11 @@ class Product:
         """
         Сложение объектов между собой
         """
-        return self.prices * self.quantity + other.prices * other.quantity
+        print(type(other))
+        print(type(self.__class__))
+        if isinstance(type(other), type(self.__class__)):
+            return self.prices * self.quantity + other.prices * other.quantity
+        raise TypeError
 
     def __str__(self):
         return f'{self.name}, {int(self.__price)} руб. Остаток: {self.quantity} шт.'
@@ -104,6 +108,7 @@ class Product:
 
 
 class SmartPhone(Product):
+    """Класс смартфон"""
 
     def __init__(self, efficiency: float, model: str, memory: float, name: str, description: str, price: float,
                  quantity: int, color):
@@ -114,6 +119,8 @@ class SmartPhone(Product):
 
 
 class LawnGrass(Product):
+    """Класс трава газонная"""
+
     def __init__(self, made: str, period: float, name: str, description: str, price: float, quantity: int, color):
         super(LawnGrass, self).__init__(name, description, price, quantity, color)
         self.made = made
