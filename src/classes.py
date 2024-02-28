@@ -93,8 +93,6 @@ class Product:
         """
         Сложение объектов между собой
         """
-        print(type(other))
-        print(type(self.__class__))
         if isinstance(type(other), type(self.__class__)):
             return self.prices * self.quantity + other.prices * other.quantity
         raise TypeError
