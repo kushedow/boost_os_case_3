@@ -34,6 +34,17 @@ def class_products():
                    180000.0, 5)
 
 
+@pytest.fixture
+def class_products_add():
+    return Product('Sony', 'мычит', 500.0, 7)
+
+
+def test_add_product(class_products, class_products_add):
+    assert isinstance(class_products_add, Product)
+    assert class_products.name == 'Samsung Galaxy C23 Ultra'
+    assert class_products_add.name == 'Sony'
+
+
 def test_products_init(class_products):
     assert class_products.name == 'Samsung Galaxy C23 Ultra'
     assert class_products.description == '256GB, Серый цвет, 200MP камера'
@@ -41,7 +52,7 @@ def test_products_init(class_products):
 
 
 def test_products_count_of_products(class_products):
-    assert class_products.count_of_products == 2
+    assert class_products.count_of_products == 4
 
 
 def test_products_repr(class_products):
